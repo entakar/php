@@ -1,0 +1,39 @@
+<?php
+/////////////////////////////////////////////////////////////////
+//
+////////////////////////////////////////////////////////////////
+$ans = 2112;
+$max = 10000;
+$min = 0;
+$href = round($max / 2);
+$re_href = $href;
+$href_count = 0;
+$flag = false;
+
+echo ($max ."=>". $href ."=>". $ans ."\n");
+
+for($i = 0;$flag == false;$i++){
+
+ echo ($max ."=>". $href ."=>". $min ."\n");
+ if($ans > $max){
+  $flag = true;
+ }else if($ans < min){
+  $flag = true;
+ }else if($ans == $href){
+ echo ("OK ". $i ."=". $href ."=>". $ans ."\n");
+ $flag = true;
+ }else if($href > $ans){
+	$max = $href;
+	$href = round($min / 2) + round($href / 2);
+ }else{
+	$min = $href;
+	$href = round($max / 2) + round($href / 2);
+ }
+ if($href == $re_href){
+  $href_count++;
+  if($href_count > 2){ $flag = true; }
+ }else{
+  $re_href = $href;
+ }
+}
+?>
